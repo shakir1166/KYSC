@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotegoda Youth Sports Club (KYSC)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <!-- Optional: Tailwind Overrides for Swiper -->
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navigation -->
+    <nav class="bg-blue-900 p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-lg" aria-label="Go to homepage">KYSC</a>
+
+            <!-- Mobile Menu Toggle (Hidden on larger screens) -->
+            <div class="block lg:hidden">
+                <button id="hamburger" class="text-white focus:outline-none" aria-label="Open mobile menu">
+                    <span class="block w-6 h-1 bg-white mb-1"></span>
+                    <span class="block w-6 h-1 bg-white mb-1"></span>
+                    <span class="block w-6 h-1 bg-white"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Links (Hidden on mobile by default) -->
+            <div id="desktopMenu" class="hidden lg:flex space-x-4">
+                <a href="#about" class="text-white hover:text-red-500" aria-label="Go to About section">About</a>
+                <a href="#contact" class="text-white hover:text-red-500" aria-label="Go to Contact section">Contact</a>
+                <a href="#login" class="text-white hover:text-red-500" aria-label="Go to Login section">Login</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Initially hidden) -->
+        <div id="mobileMenu" class="lg:hidden hidden bg-blue-900 text-white py-4 space-y-4">
+            <a href="#about" class="block px-4 py-2 hover:text-red-500" aria-label="Go to About section">About</a>
+            <a href="#contact" class="block px-4 py-2 hover:text-red-500" aria-label="Go to Contact section">Contact</a>
+            <a href="#login" class="block px-4 py-2 hover:text-red-500" aria-label="Go to Login section">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('assets/your-image.jpg');">
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 px-4 sm:px-8 lg:px-16 flex items-start justify-center h-full pt-16"> 
+            <div class="text-center w-full">
+                <img src="assets/logo.png" alt="KYSC Logo" class="mx-auto mb-4 w-24 h-24">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-white">Kotegoda Youth Sports Club</h1>
+                <p class="text-lg sm:text-xl text-white max-w-xl mx-auto mb-8">
+                    To empower our community by fostering a love for sports, building character, and inspiring a lifelong commitment to fitness and teamwork.
+                </p>
+                <a href="#about" class="mt-6 inline-block bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-500 transition-all">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">About KYSC</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                Kotegoda Youth Sports Club (KYSC) is dedicated to fostering sportsmanship, teamwork, and fitness within our community. Through quality training and support, we empower young athletes to excel in sports and life.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Kickboxing</h3>
+                    <p class="text-gray-600">Our popular kickboxing program builds strength, coordination, and confidence for all levels.</p>
+		<a href="https://forms.gle/yHEdvoV99eNk5eQp9" target="_blank" class="inline-block bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-500 transition-all">
+    Join Kickboxing
+</a>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Soccer</h3>
+                    <p class="text-gray-600">Join our soccer teams to learn skills, teamwork, and enjoy competitive play.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Cricket</h3>
+                    <p class="text-gray-600">Our cricket coaching helps players of all ages master the game and enjoy team spirit.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-green-800 mb-2">Volleyball</h3>
+                    <p class="text-gray-600">Play volleyball, enhance fitness, and build camaraderie in a supportive environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Swiper -->
+    <section id="gallery" class="py-20 bg-gray-100 text-center">
+        <div class="container mx-auto px-4 sm:px-8 lg:px-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">Gallery</h2>
+            
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery1.JPG" alt="Gallery Image 1" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery2.JPG" alt="Gallery Image 2" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery3.JPG" alt="Gallery Image 3" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery4.JPG" alt="Gallery Image 4" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery5.JPG" alt="Gallery Image 5" class="rounded-lg shadow-md">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/Gallery6.JPG" alt="Gallery Image 6" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+<footer class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto px-4 sm:px-8 lg:px-16 text-left flex flex-col lg:flex-row justify-between items-start h-full">
+
+        <!-- Contact Form (Left-Aligned) -->
+        <form id="contact" action="https://formspree.io/f/abcd1234" method="POST" class="mt-4 max-w-md p-6 bg-gray-700 rounded-lg shadow-md w-full lg:w-auto lg:ml-0">
+            <h2 class="text-xl font-semibold mb-2">Contact Us</h2>
+            <input type="text" name="name" class="block w-full bg-gray-200 text-gray-900 border border-gray-300 p-2 rounded mb-2" placeholder="Your Name" required>
+            <input type="email" name="email" class="block w-full bg-gray-200 text-gray-900 border border-gray-300 p-2 rounded mb-2" placeholder="Your Email" required>
+            <textarea name="message" class="block w-full bg-gray-200 text-gray-900 border border-gray-300 p-2 rounded mb-2" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500 transition-all">Send</button>
+        </form>
+
+        <!-- Newsletter Signup -->
+        <div class="mt-8 bg-gray-700 p-6 rounded-lg shadow-md w-full lg:w-auto">
+            <h2 class="text-2xl font-semibold text-white mb-4">Subscribe to Our Newsletter</h2>
+            <form action="https://formspree.io/f/abcd1234" method="POST">
+                <input type="email" name="email" class="block w-full bg-gray-200 text-gray-900 border border-gray-300 p-2 rounded mb-2" placeholder="Your Email" required>
+                <button type="submit" class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500 transition-all">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="mt-6 text-white">
+            <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="#about" class="hover:text-red-500">About Us</a></li>
+                <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
+                <li><a href="#events" class="hover:text-red-500">Upcoming Events</a></li>
+                <li><a href="/faq" class="hover:text-red-500">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mt-8 text-center lg:text-left">
+            <div class="flex justify-start space-x-4 mt-4">
+                <a href="https://www.facebook.com/KYSCHMG?mibextid=LQQJ4d" class="text-white hover:text-red-500" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://twitter.com/your-profile" class="text-white hover:text-red-500" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://www.instagram.com/kotegodayouthsportsclub?igsh=MXM2MTlpNmhjYnI3aA==" class="text-white hover:text-red-500" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="bg-blue-800 text-white text-center py-4">
+        <p>&copy; 2024 Kotegoda Youth Sports Club. All Rights Reserved.</p>
+        <p class="text-sm">This website is not affiliated with any other organization unless specified. Terms and Conditions apply.</p>
+    </div>
+</footer>
+
+    <!-- Swiper.js Script -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            spaceBetween: 20,
+            slidesPerView: 1,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const desktopMenu = document.getElementById('desktopMenu');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            desktopMenu.classList.toggle('hidden'); // Ensure desktop menu is hidden
+        });
+    </script>
+
+</body>
+</html>
